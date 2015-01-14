@@ -1,3 +1,4 @@
+
 public void setup()
 {
   String lines[] = loadStrings("palindromes.txt");
@@ -15,8 +16,23 @@ public void setup()
   }
 }
 public boolean palindrome(String word)
-{
-  //your code here
-  return false;
-}
-
+{ 
+ 
+   word = word.toLowerCase(); 
+   String output = new String();
+  for(int i =0; i < word.length(); i++){
+   if(Character.isLetter(word.charAt(i)) == true){
+     output += word.charAt(i);
+   }
+ }
+   int last = output.length() - 1;
+ for(int i =0; i < (output.length())/2; i++){
+  if(output.charAt(i) != output.charAt(last)){
+    return false;
+  }
+  else{
+    last--;
+      }
+    }
+  return true;
+} 
